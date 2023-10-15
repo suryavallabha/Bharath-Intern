@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    }
+    nav li {
+    margin: 0 10px;
+    cursor: pointer;
+    }
+    nav li:hover {
+    text-decoration: underline;
+    }
+    .sur{
+        height:70vh;
+        width: 100vw;
+    }
+    body{
+        background-color: #111;
+        color: white;
+    }
+    header {
+    background-color: #111;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .img{
+        height: 40px;
+        margin-top:10px;
+    }
+    .logo{
+        font-size: 30px;
+    }
+    .row_poster {
+    width: 110%;
+    object-fit: contain;
+    max-height: 200px;
+    margin-right: 10px;
+    transition: transform 300ms;
+    }
+
+    .row_posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+    }
+
+    .row_poster:hover{
+    transform: scale(1.08);
+    }
+
+    .row_posters::-webkit-scrollbar{
+    display: none;
+    }
+
+    .row_posterlarge{
+    max-height: 200px;
+    }
+    .row_posterlarge:hover{
+    transform: scale(1.10);
+    }
+
+
+    .row{
+    color: white;
+    margin-left: 20px;
+    }
+    .but:hover{
+        transform: scale(1.20);
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="logo">
+        NETFLIX <img class="img" src="data:image/png;base64,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" alt="">
+    </div>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Login</li>
+            <li>Sign up</li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+    <section class="vallu">
+        <div >
+            <img class="sur" src="https://v3img.voot.com/jioimage/33/28/daad830074f611e688d58522ba040c22_1583325957503_l.jpg" alt="">
+            <button class="but">play</button>
+        </div>
+        </section>
+    <section class="content">
+       
+
+    </section>
+    </main>
+    <div class="row">
+        <h2>CLASSICS</h2>
+
+        <div class="row_posters">
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/8f50b24e5bc47a7c9b5012777e21ef158c80ebef44ae4ebb5c0bf12af18a55e4.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/p_avengersinfinitywar_19871_cb171514.jpeg?region=0%2C0%2C540%2C810" alt="" class="row_poster row_posterlarge">
+            <img src="https://flxt.tmsimg.com/assets/p3531967_p_v13_an.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://m.media-amazon.com/images/M/MV5BZmFmOTliOTQtOTBjYy00YWM3LTk2NmMtZjMyOTNhYjEyNTdhXkEyXkFqcGdeQXVyMTI1NDAzMzM0._V1_.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://m.media-amazon.com/images/M/MV5BOGEzYzcxYjAtZmZiNi00YzI0LWIyY2YtOTM0MDFjODU2YTZiXkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/p_thejunglebook2016_19751_6b8cfcec.jpeg?region=0%2C0%2C540%2C810" alt="" class="row_poster row_posterlarge">
+            <img src="https://m.media-amazon.com/images/M/MV5BZjAzZjZiMmQtMDZmOC00NjVmLTkyNTItOGI2Mzg4NTBhZTA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://m.media-amazon.com/images/M/MV5BODQ0OWJiMzktYjNlYi00MzcwLThlZWMtMzRkYTY4ZDgxNzgxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="" class="row_poster row_posterlarge">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjg4OTgwNTExNF5BMl5BanBnXkFtZTcwMTMzNTM4Ng@@._V1_.jpg" alt="" class="row_poster row_posterlarge">
+        </div>
+        <div class="row">
+            <h2>TRENDING WORLD WIDE</h2>
+    
+            <div class="row_posters">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/6c2c7ace999b2efa7d6d113f7f3ec49f83722dbd2a22b202ef8028f26a1d0b69.jpg" alt="" class="row_poster row_posterlarge">
+                <img src="https://m.media-amazon.com/images/M/MV5BZDNlNzBjMGUtYTA0Yy00OTI2LWJmZjMtODliYmUyYTI0OGFmXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_.jpg" alt="" class="row_poster row_posterlarge">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_vl/sources/r1/cms/prod/old_images/vertical/MOVIE/1777/1000071777/1000071777-v" alt="" class="row_poster row_posterlarge">
+                <img src="https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/bullettrain_onesheet_1400x2100_v4.jpg?itok=khOUNLFM" alt="" class="row_poster row_posterlarge">
+                <img src="https://www.themoviedb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="" class="row_poster row_posterlarge">
+               
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/3b6ae28b92514bca96ea2105769eab125f93a7fdba9b78d3723dd6f9c3e7523a.jpg" alt="" class="row_poster row_posterlarge">
+                <img src="https://m.media-amazon.com/images/M/MV5BYWJmZWQ1ZTctMTVkYi00YThhLWE1NTgtYWQ1NTJjYWI0MWM1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="" class="row_poster row_posterlarge">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCF0y9TmWU6nYpXwxxUDtWYA13vSs40eKXUWwZrzAd0mifTnJk3TLMRExGCI9pVsfJ0w4&usqp=CAU" alt="" class="row_poster row_posterlarge">
+            </div>
+    
+     </div>
+    </div>
+</body>
+</html>
