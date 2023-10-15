@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:gyb(205, 209, 228);
+  }
+  .container {
+    color: #dedede;
+    background-color: #3f3f3f;
+    min-width: 450px;
+    border-radius: 20px;
+    height: 250px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    margin-top: 8px;
+  }
+  .celcius,
+  .fahrenheit,
+  .kelvin {
+    margin-left: 30%;
+    margin-bottom: 3px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    height: 50px;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: -5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #icon {
+    background-color: #9e9e9e;
+    font-size: 30px;
+    border-radius: 0px 10px 10px 0px;
+    padding-top: 1.5px;
+    padding-bottom: 13.5px;
+    padding-right: 10px;
+  }
+  .button {
+    margin-top: 10px;
+    text-align: center;
+  }
